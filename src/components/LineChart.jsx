@@ -1,7 +1,6 @@
 import React from "react";
 import { Line } from "react-chartjs-2";
 import { Col, Row, Typography } from "antd";
-import Chart from "chart.js/auto";
 import moment from "moment";
 
 const { Title } = Typography;
@@ -11,8 +10,6 @@ const LineChart = ({ coinHistory, currentPrice, coinName }) => {
   const coinTimestamp = [];
   for (let i = 0; i < coinHistory?.data?.history?.length; i += 5) {
     coinPrice.push(coinHistory?.data?.history[i].price);
-    const date = new Date(coinHistory?.data?.history[i].timestamp);
-    // console.log(date.toLocaleString());
     coinTimestamp.push(
       moment.unix(coinHistory?.data?.history[i].timestamp).format("DD/MM/YYYY")
     );

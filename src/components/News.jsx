@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useGetCryptoNewsQuery } from "../services/cryptoNewsApi";
 import { Avatar, Card, Col, Row, Select, Typography } from "antd";
 import moment from "moment";
-import { Option } from "antd/es/mentions";
 import { useGetCryptosQuery } from "../services/cryptoApi";
+import Loader from "./Loader";
 const { Text, Title } = Typography;
 const News = ({ simplified }) => {
   const [newsCategory, setNewsCategory] = useState("Cryptocurrency");
@@ -16,9 +16,9 @@ const News = ({ simplified }) => {
     value: `${coin.name}`,
     label: `${coin.name}`,
   }));
-  if (!cryptoNews?.value) return "Loading...";
+  if (!cryptoNews?.value) return <Loader />;
   return (
-    <Row gutter={[24, 24]}>
+    <Row gutter={[24, 24]} style={{textAlign: "center"}}>
       {!simplified && (
         <Col span={24}>
           <Select

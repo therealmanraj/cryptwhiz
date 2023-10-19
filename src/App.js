@@ -25,6 +25,7 @@ function App() {
     if (location) {
       if (current !== location.pathname) {
         setCurrent(location.pathname);
+        window.scrollTo(0, 0);
       }
     }
   }, [location, current]);
