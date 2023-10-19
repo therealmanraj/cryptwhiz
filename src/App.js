@@ -17,7 +17,7 @@ function App() {
   let location = useLocation();
   const [current, setCurrent] = useState(
     location.pathname === "/" || location.pathname === ""
-      ? "/dashboard"
+      ? "/"
       : location.pathname
   );
 
