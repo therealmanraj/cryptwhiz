@@ -18,7 +18,7 @@ const News = ({ simplified }) => {
   }));
   if (!cryptoNews?.value) return <Loader />;
   return (
-    <Row gutter={[24, 24]} style={{textAlign: "center"}}>
+    <Row gutter={[24, 24]} style={{ textAlign: "center" }}>
       {!simplified && (
         <Col span={24}>
           <Select

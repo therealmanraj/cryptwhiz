@@ -6,7 +6,7 @@ import millify from "millify";
 import Loader from "./Loader";
 
 const Cryptocurrencies = ({ simplified }) => {
-  const count = simplified ? 10 : 100;
+  const count = simplified ? 12 : 100;
   const { data: cryptoList, isFetching } = useGetCryptosQuery(count);
   const [cryptos, setCryptos] = useState([]);
 
@@ -41,7 +41,9 @@ const Cryptocurrencies = ({ simplified }) => {
             <Link to={`/crypto/${currency.uuid}`}>
               <Card
                 title={`${currency.rank}.${currency.name}`}
-                extra={<img className="crypto-image" src={currency.iconUrl} alt=""/>}
+                extra={
+                  <img className="crypto-image" src={currency.iconUrl} alt="" />
+                }
                 hoverable
               >
                 <p>Price: ${millify(currency.price)}</p>
